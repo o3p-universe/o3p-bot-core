@@ -69,20 +69,6 @@ curl -fsSL https://raw.githubusercontent.com/odoo-third-party/o3p-module-install
 The installer is expected to copy the addon into the configured Odoo addons
 path, refresh the app list, and prepare the module for installation or upgrade.
 
-For a manual command-line upgrade after the addon is already available in an
-Odoo addons path: 
-
-```bash
-/opt/odoo19/venv/bin/python3 /opt/odoo19/odoo-bin \
-  -c /etc/odoo19.conf \
-  -d YOUR_DATABASE \
-  -u o3p_bot_core \
-  --stop-after-init \
-  --workers=0
-```
-
-Restart Odoo after installing or upgrading the module.
-
 ## Core Models
 
 ### `botchat`
@@ -125,20 +111,6 @@ The tuple `provider + chat_id + messageid` is unique.
 ## Branching
 
 Development for Odoo 19 happens on branch `19.0`.
-
-## Local Helper Scripts
-
-This repository may contain local deployment helpers such as `upush.sh`,
-`fulldeploy.sh`, and `restart_odoo19.sh`. They are intentionally ignored by Git
-because they contain machine-specific deployment assumptions.
-
-Before using them on a new host, check:
-
-- the local checkout path
-- the Odoo service name
-- the Odoo database name
-- the Odoo config and binary paths
-- whether the remote branch exists
 
 ## License
 
